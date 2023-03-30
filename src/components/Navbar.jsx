@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import BurguerButton from './BurguerButton'
-
+import CartWidget from './CartWidget'
 function Navbar() {
 
   const [clicked, setClicked] = useState(false)
@@ -14,16 +14,17 @@ function Navbar() {
       <NavContainer>
         <h2>Argentina<span>Open</span></h2>
         <div className={`links ${clicked ? 'active' : ''}`}>
-          <a onClick={handleClick} href="#h">Tu entrada</a>
+         <a onClick={handleClick} href="#h">Tu entrada</a>
           <a onClick={handleClick} href="#h">Jugadores del torneo</a>
           <a onClick={handleClick} href="#h">ultimos campeones</a>
           <a onClick={handleClick} href="#h">Contacto</a>
           <a onClick={handleClick} href="#h">nuestra tienda</a>
-          
+          <button>boton 1</button>
         </div>
         <div className='burguer'>
           <BurguerButton clicked={clicked} handleClick={handleClick} />
         </div>
+        <CartWidget/>
         <BgDiv className={`initial ${clicked ? ' active' : ''}`}></BgDiv>
       </NavContainer>
     </>
